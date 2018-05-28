@@ -6,6 +6,10 @@ pub struct MacroChunk {
     alt: u32,
 }
 
+impl MacroChunk {
+    pub fn altitude(&self) -> u32 { self.alt }
+}
+
 pub struct MacroWorld {
     seed: u64,
     size: u32,
