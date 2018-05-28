@@ -35,8 +35,8 @@ impl MacroWorld {
 
     pub fn size(&self) -> u32 { self.size }
 
-    pub fn get(&self, x: u32, y: u32) -> Option<MacroChunk> {
-        self.chunks.get(self.size * x + y)
+    pub fn get<'a>(&'a self, x: u32, y: u32) -> Option<&'a MacroChunk> {
+        self.chunks.get(self.size as usize * x as usize + y as usize)
     }
 }
 
